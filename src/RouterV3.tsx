@@ -1,8 +1,6 @@
-import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
-import React from "react";
-import { Box, ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
+import App from "./App/App";
+import { Box } from "@chakra-ui/react";
 import Details from "./Components/Details/DetailsV3";
 
 

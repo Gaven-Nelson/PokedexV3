@@ -1,12 +1,17 @@
-// import React from 'react'
-// import {rest} from 'msw'
-// import {setupServer} from 'msw/node'
-// import {render, fireEvent, waitFor, screen} from '@testing-library/react'
-// import '@testing-library/jest-dom'
-// import Fetch from '../fetch'
+import { SimpleGrid } from "@chakra-ui/react";
+import { render } from "@testing-library/react";
+import { PokemonArrayProvider } from "../../Context/PokemonArrayContext";
+import PokemonCard from "../PokemonCard/PokemonCardV3";
+import AppBody from "./AppBodyV3";
+
+describe("AppBody Component", () => {
+
+   const dumbArray = [0];
+   test('test tester', () => {
+      expect(dumbArray).toContain(0);
+   })
 
 
-// describe('renders AppBody', () => {
-//     let container:HTMLDivElement
-// })
-export {}
+
+
+})

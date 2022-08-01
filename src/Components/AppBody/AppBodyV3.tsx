@@ -6,11 +6,10 @@ import {
     TabPanel,
     SimpleGrid,
   } from "@chakra-ui/react";
-import { PokemonArrayItem } from "../../App";
+import { PokemonArrayItem } from "../../App/App";
 import { useArtStyle } from "../../Context/ArtStyleContextV3";
-import ListCardView from "../ListCardViewV3";
-import PokemonCard from "../PokemonCardV3";
-import "/Users/gavennelson/Documents/PokedexProject3/pokedexReact/pokedexreactapp/src/Components/PokemonCardV3.css";
+import ListCardView from "../ListCardView/ListCardViewV3";
+import PokemonCard from "../PokemonCard/PokemonCardV3";
 
   
   interface Props {

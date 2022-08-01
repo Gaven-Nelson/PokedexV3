@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Box, Flex, Container, Image } from "@chakra-ui/react";
-import AppBody from "./Components/AppBody/AppBodyV3";
-import AppHeader from "./Components/AppHeader/AppHeaderV3";
-import { useArtStyle } from "./Context/ArtStyleContextV3";
-import { useMetaValue } from "./Context/MetaValueContextV3";
-import AppTools from "./Components/AppTools/AppToolsV3";
-
+import { Box, Flex, Image } from "@chakra-ui/react";
+import AppBody from "../Components/AppBody/AppBodyV3";
+import AppHeader from "../Components/AppHeader/AppHeaderV3";
+import { useArtStyle } from "../Context/ArtStyleContextV3";
+import { useMetaValue } from "../Context/MetaValueContextV3";
+import AppTools from "../Components/AppTools/AppToolsV3";
+import pikachu from "/Users/gavennelson/Documents/PokedexProject3/pokedexReact/pokedexreactapp/src/runningPikachu.gif"
 
 export interface PokemonArrayItem {
   id: number;
@@ -20,17 +20,13 @@ export interface PokemonArrayItem {
 function App() {
   const [pokemonArray, setPokemonArray] = useState<Array<PokemonArrayItem>>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { meta, setMeta } = useMetaValue();
-  const { artStyle, setArtStyle } = useArtStyle();
+  const { setMeta } = useMetaValue();
+  const { artStyle } = useArtStyle();
 
-  let [searchParams, setSearchParams] = useSearchParams();
+  let [searchParams] = useSearchParams();
   let pageNumber = searchParams.get("page") ?? 1;
   let searchValue = searchParams.get("name") ?? "";
 
-  interface Meta {
-    current_page: number;
-    last_page: number;
-  }
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -49,7 +45,7 @@ function App() {
     return function cancel() {
       abortController.abort();
     };
-  }, [pageNumber, artStyle, searchValue]);
+  }, [pageNumber, artStyle, searchValue, setMeta]);
 
   if (isLoading === true) {
     return (
@@ -61,7 +57,7 @@ function App() {
           flexDirection="column"
           alignItems="center"
         >
-          {/* <Image paddingTop="100" maxH="300" maxW="300" src={pikachu} /> */}
+           <Image paddingTop="100" maxH="300" maxW="300" src={pikachu} /> 
           <Box color="white">Loading...</Box>
         </Flex>
       </Box>

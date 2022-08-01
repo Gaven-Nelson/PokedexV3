@@ -19,7 +19,7 @@ import { useMetaValue } from "../../Context/MetaValueContextV3";
 import randomTextImage from "./randomImage.png";
 
 function AppTools() {
-  const { artStyle, setArtStyle } = useArtStyle();
+  const { setArtStyle } = useArtStyle();
   const navigate = useNavigate();
   const toPageValue: RefObject<HTMLInputElement> = createRef();
   const {meta} = useMetaValue();
@@ -27,7 +27,6 @@ function AppTools() {
   let [searchParams, setSearchParams ] = useSearchParams();
   let pageNumber = searchParams.get('page') ?? 1;
   let searchValue = searchParams.get('name') ?? ""; 
-
 
   const handleGoButton = () => {
     if (

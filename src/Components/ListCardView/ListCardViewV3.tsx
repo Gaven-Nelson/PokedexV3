@@ -1,14 +1,13 @@
 import React from "react";
 import {
   Box,
-  Flex,
   Image,
   Button,
-  AspectRatio,
-  Skeleton,
 } from "@chakra-ui/react";
-import { useSearchParams, useParams, useNavigate } from "react-router-dom";
-import "/Users/gavennelson/Documents/PokedexProject3/pokedexReact/pokedexreactapp/src/Components/PokemonCardV3.css";
+import { useNavigate } from "react-router-dom";
+import "./ListCardViewV3.css";
+
+
 
 interface Props {
   id: number;
@@ -33,19 +32,19 @@ const ListCardView = ({
   //need special cases for 5 pokemon as they have special characters
   let specialCharacter = "";
   switch (true) {
-    case id == 29:
+    case id === 29:
       specialCharacter = "nidoran-m";
       break;
-    case id == 32:
+    case id === 32:
       specialCharacter = "nidoran-f";
       break;
-    case id == 83:
+    case id === 83:
       specialCharacter = "farfetchd";
       break;
-    case id == 122:
+    case id === 122:
       specialCharacter = "mr-mime";
       break;
-    case id == 439:
+    case id === 439:
       specialCharacter = "mime-jr";
       break;
     default:
@@ -56,19 +55,19 @@ const ListCardView = ({
   //the links have different formats for pokemon, this one uses underscores
   let specialCharacter3d = "";
   switch (true) {
-    case id == 29:
+    case id === 29:
       specialCharacter3d = "nidoran_m";
       break;
-    case id == 32:
+    case id === 32:
       specialCharacter3d = "nidoran_f";
       break;
-    case id == 83:
+    case id === 83:
       specialCharacter3d = "farfetchd";
       break;
-    case id == 122:
+    case id === 122:
       specialCharacter3d = "mr.mime";
       break;
-    case id == 439:
+    case id === 439:
       specialCharacter3d = "mime_jr";
       break;
     default:
@@ -90,7 +89,7 @@ const ListCardView = ({
   }
 
   const threeDURL = `https://img.pokemondb.net/sprites/home/normal/${specialCharacter.toLowerCase()}.png`;
-  const eightBitURL = `https:\/\/intern-pokedex.myriadapps.com\/images\/pokemon\/${id}.png`;
+  const eightBitURL = `https:/intern-pokedex.myriadapps.com/images/pokemon/${id}.png`;
   const cartoonURL = `https://img.pokemondb.net/artwork/vector/${specialCharacter.toLowerCase()}.png`;
   const pokedexURL = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${sugimoriId}.png`;
   const real3DURL = `https://projectpokemon.org/images/normal-sprite/${specialCharacter3d.toLowerCase()}.gif`;

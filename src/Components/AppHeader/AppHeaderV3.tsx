@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Input, InputGroup, InputRightElement, Image, Show } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, InputGroup, InputRightElement, Image} from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
 import { useMetaValue } from "../../Context/MetaValueContextV3";
 import pokedexText from "./PokemonText.png";
