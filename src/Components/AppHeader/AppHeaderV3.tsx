@@ -99,6 +99,7 @@ function AppHeader() {
             >
               <Image
                 src={pokedexText}
+                alt="titleText"
                 maxW={["20", "100", "250"]}
                 onClick={handleHomeButton}
               />{" "}
